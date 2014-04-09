@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails'
+gem 'rails', '~> 4.1.0'
 gem 'pg'
 gem 'sass-rails'
 gem 'uglifier'
@@ -21,5 +21,7 @@ group :test, :development do
 end
 
 group :test do
+  gem 'minitest'
   gem 'shoulda-matchers'
+  gem 'capybara'
 end

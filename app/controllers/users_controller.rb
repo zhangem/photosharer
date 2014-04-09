@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       flash[:notice] = "A new user has been born."
       redirect_to('/users')
     else
-      render('/users')
+      render('users')
     end
   end
 
