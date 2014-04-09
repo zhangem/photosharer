@@ -15,15 +15,20 @@ class UsersController < ApplicationController
       flash[:notice] = "A new user has been born."
       redirect_to('/users')
     else
-      render('users')
+      render('/users/index')
     end
   end
+
+  def show
+    @user = User.find(session[:user_id])
+  end
+
 
 
 
 private
 
   def user_params
-    params.require(:user).permit(:user_name, :password, :password_confirmation)
+    params.require(:user).permit(:user_name, :password, :password_confirmation, :first_name, :last_name, :email)
   end
 end
