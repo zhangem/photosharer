@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "A new user has been born."
+      flash[:alert] = "A new user has been born."
       redirect_to('/users')
     else
       render('/users/index')
@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(session[:user_id])
+
   end
 
 
